@@ -35,6 +35,12 @@ public class VirtualWallet {
         this.id = preAllocatedId;
     }
 
+    public VirtualWallet(Long id, Long createTime, BigDecimal balance) {
+        this.id = id;
+        this.createTime = createTime;
+        this.balance = balance;
+    }
+
     public BigDecimal balance() {
         return balance;
     }

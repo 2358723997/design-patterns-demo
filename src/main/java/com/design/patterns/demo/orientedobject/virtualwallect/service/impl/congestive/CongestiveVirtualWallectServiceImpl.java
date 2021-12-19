@@ -88,9 +88,7 @@ public class CongestiveVirtualWallectServiceImpl implements VirtualWallectServic
     }
 
     private VirtualWallet covert(VirtualWalletEntity entity) {
-        VirtualWallet result = new VirtualWallet();
-        result.setBalance(entity.getBalance());
-        result.setCreateTime(entity.getCreateTime());
+        VirtualWallet result = new VirtualWallet(entity.getId(),entity.getCreateTime(),entity.getBalance());
         return result;
     }
 }
