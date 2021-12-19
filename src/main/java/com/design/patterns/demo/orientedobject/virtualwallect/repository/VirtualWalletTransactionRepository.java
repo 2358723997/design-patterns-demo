@@ -1,5 +1,7 @@
 package com.design.patterns.demo.orientedobject.virtualwallect.repository;
 
+import com.design.patterns.demo.orientedobject.virtualwallect.repository.entity.VirtualWalletTransactionEntity;
+
 /**
  * VirtualWalletTransactionRepository接口
  *
@@ -7,4 +9,6 @@ package com.design.patterns.demo.orientedobject.virtualwallect.repository;
  * @date 12/18/21 8:36 PM
  */
 public interface VirtualWalletTransactionRepository {
+
+    void saveTransaction(VirtualWalletTransactionEntity transactionEntity);
 }

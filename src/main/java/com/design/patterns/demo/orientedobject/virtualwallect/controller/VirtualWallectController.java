@@ -36,24 +36,24 @@ public class VirtualWallectController {
      * 出账
      *
      * @param wallectId
-     * @param account
+     * @param amount
      */
 
     @PostMapping(value = "/Debit")
-    public void debit(Long wallectId, BigDecimal account) {
-        service.debit(wallectId, account);
+    public void debit(Long wallectId, BigDecimal amount) {
+        service.debit(wallectId, amount);
     }
 
     /**
      * 入账
      *
      * @param wallectId
-     * @param account
+     * @param amount
      */
 
     @PostMapping(value = "/Crebit")
-    public void credit(Long wallectId, BigDecimal account) {
-        service.credit(wallectId, account);
+    public void credit(Long wallectId, BigDecimal amount) {
+        service.credit(wallectId, amount);
     }
 
     /**
@@ -61,11 +61,11 @@ public class VirtualWallectController {
      *
      * @param fromWallectId
      * @param toWallectId
-     * @param account
+     * @param amount
      */
     @PostMapping(value = "/Tranfer")
-    public void tranfer(Long fromWallectId, Long toWallectId, BigDecimal account) {
-        service.tranfer(fromWallectId, toWallectId, account);
+    public void tranfer(Long fromWallectId, Long toWallectId, BigDecimal amount) {
+        service.tranfer(fromWallectId, toWallectId, amount);
     }
 
 }

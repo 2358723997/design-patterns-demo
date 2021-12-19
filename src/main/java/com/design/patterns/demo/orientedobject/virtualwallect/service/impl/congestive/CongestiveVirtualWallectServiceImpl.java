@@ -32,17 +32,17 @@ public class CongestiveVirtualWallectServiceImpl implements VirtualWallectServic
     }
 
     @Override
-    public void debit(Long wallectId, BigDecimal account) {
+    public void debit(Long wallectId, BigDecimal amount) {
 
     }
 
     @Override
-    public void credit(Long wallectId, BigDecimal account) {
+    public void credit(Long wallectId, BigDecimal amount) {
 
     }
 
     @Override
-    public void tranfer(Long fromWallectId, Long toWallectId, BigDecimal account) {
+    public void tranfer(Long fromWallectId, Long toWallectId, BigDecimal amount) {
 
     }
 }

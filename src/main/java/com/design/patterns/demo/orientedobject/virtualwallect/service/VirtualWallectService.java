@@ -2,6 +2,8 @@ package com.design.patterns.demo.orientedobject.virtualwallect.service;
 
 import java.math.BigDecimal;
 
+import com.design.patterns.demo.orientedobject.virtualwallect.exception.NoSufficientBalanceException;
+
 /**
  * VirtualWallectService类
  *
@@ -21,24 +23,24 @@ public interface VirtualWallectService {
      * 出账
      *
      * @param wallectId
-     * @param account
+     * @param amount
      */
-    void debit(Long wallectId, BigDecimal account);
+    void debit(Long wallectId, BigDecimal amount) throws NoSufficientBalanceException;
 
     /**
      * 入账
      *
      * @param wallectId
-     * @param account
+     * @param amount
      */
-    void credit(Long wallectId, BigDecimal account);
+    void credit(Long wallectId, BigDecimal amount);
 
     /**
      * 转账
      *
      * @param fromWallectId
      * @param toWallectId
-     * @param account
+     * @param amount
      */
-    void tranfer(Long fromWallectId, Long toWallectId, BigDecimal account);
+    void tranfer(Long fromWallectId, Long toWallectId, BigDecimal amount) throws NoSufficientBalanceException;
 }
