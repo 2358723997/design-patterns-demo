@@ -2,6 +2,9 @@ package com.design.patterns.demo.orientedobject.virtualwallect.controller;
 
 import java.math.BigDecimal;
 
+import com.design.patterns.demo.orientedobject.virtualwallect.exception.InsufficientBalanceException;
+import com.design.patterns.demo.orientedobject.virtualwallect.exception.InvalidAmountException;
+import com.design.patterns.demo.orientedobject.virtualwallect.exception.NoSufficientBalanceException;
 import com.design.patterns.demo.orientedobject.virtualwallect.service.VirtualWallectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,7 +43,7 @@ public class VirtualWallectController {
      */
 
     @PostMapping(value = "/Debit")
-    public void debit(Long wallectId, BigDecimal amount) {
+    public void debit(Long wallectId, BigDecimal amount) throws NoSufficientBalanceException, InsufficientBalanceException {
         service.debit(wallectId, amount);
     }
 
@@ -52,7 +55,7 @@ public class VirtualWallectController {
      */
 
     @PostMapping(value = "/Crebit")
-    public void credit(Long wallectId, BigDecimal amount) {
+    public void credit(Long wallectId, BigDecimal amount) throws InvalidAmountException {
         service.credit(wallectId, amount);
     }
 
@@ -64,7 +67,7 @@ public class VirtualWallectController {
      * @param amount
      */
     @PostMapping(value = "/Tranfer")
-    public void tranfer(Long fromWallectId, Long toWallectId, BigDecimal amount) {
+    public void tranfer(Long fromWallectId, Long toWallectId, BigDecimal amount) throws NoSufficientBalanceException, InsufficientBalanceException, InvalidAmountException {
         service.tranfer(fromWallectId, toWallectId, amount);
     }
 
