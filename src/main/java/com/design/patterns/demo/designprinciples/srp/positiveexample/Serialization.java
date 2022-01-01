@@ -1,6 +1,5 @@
 package com.design.patterns.demo.designprinciples.srp.positiveexample;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
