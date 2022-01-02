@@ -1,4 +1,4 @@
-package com.design.patterns.demo.designprinciples.isp.oopapi;
+package com.design.patterns.demo.designprinciples.isp.oopapi.configsource;
 
 import com.design.patterns.demo.designprinciples.isp.oopapi.configsource.ConfigSource;
 

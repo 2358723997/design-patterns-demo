@@ -3,9 +3,7 @@ package com.design.patterns.demo.designprinciples.isp.oopapi.interfaces;
 import java.util.Map;
 
 /**
- * Viewer接口
- *
- *功能：监控
+ * Viewer监控接口
  *
  * @author wangjixue
  * @date 1/1/22 4:06 PM
