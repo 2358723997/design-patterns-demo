@@ -130,7 +130,7 @@ public class TransactionTest {
 
 
     @Test
-    public void testExecute_with_TransactionIsExpired() {
+    public void testExecuteNew_with_TransactionIsExpired() throws InvalidTransactionException {
         Long buyerId = 123L;
         Long sellerId = 234L;
         Long productId = 345L;
