@@ -122,7 +122,7 @@ public class TransactionTest {
         String orderId = "456";
         Transaction transaction = new Transaction(null, buyerId, sellerId, productId, orderId);
         //创建时间设置为14天前
-        transaction.setCreatedTimestamp(System.currentTimeMillis() - 14*24*3600*1000l);
+        //transaction.setCreatedTimestamp(System.currentTimeMillis() - 14*24*3600*1000l);
         boolean actualResult = transaction.execute();
         assertFalse(actualResult);
         assertEquals(STATUS.EXPIRED, transaction.getStatus());

@@ -8,14 +8,14 @@ import org.apache.commons.lang3.StringUtils;
  * @author wangjixue
  * @date 4/19/22 10:24 PM
  */
-public class User {
+public abstract class User {
     private String userName;
     private String name;//借助User对象上下文简化命名
 
     private String password;
 
-    public void uploadUserAvatarImageToAliyun(String userAvatarImageUri);
-    public void uploadUserAvatarImageToAliyun(String imageUri); // 借助函数上下文简化命名
+    //public abstract void uploadUserAvatarImageToAliyun(String userAvatarImageUri);
+    public abstract void uploadUserAvatarImageToAliyun(String imageUri); // 借助函数上下文简化命名
 
     /**
      * 密码校验
@@ -41,7 +41,7 @@ public class User {
         // check if password contains only a~z,0~9,A~Z
         for (int i = 0; i < length; i++) {
             char c = password.charAt(i);
-            if(!((c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z')){
+            if(!((c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z'))){
                 return false;
             }
         }

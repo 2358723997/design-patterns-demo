@@ -3,6 +3,7 @@ package com.design.patterns.demo.designprinciples.lsp.positiveexample;
 import java.io.IOException;
 
 import com.design.patterns.demo.designprinciples.lsp.Transporter;
+import com.design.patterns.demo.designprinciples.lsp.exceptions.NoAuthorizationRuntimeException;
 import com.design.patterns.demo.designprinciples.lsp.request.Request;
 import com.design.patterns.demo.designprinciples.lsp.response.Response;
 import org.apache.commons.lang3.StringUtils;
@@ -26,7 +27,7 @@ public class SecurityTransporter extends Transporter {
     }
 
     @Override
-    public Response sendRequest(Request request) throws IOException {
+    public Response sendRequest(Request request) throws IOException, NoAuthorizationRuntimeException {
         if(StringUtils.isNotBlank(appId) && StringUtils.isNotBlank(appToken)){
             request.addPayload("app-id", appId);
             request.addPayload("app-token", appToken);

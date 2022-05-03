@@ -25,13 +25,13 @@ public class ArtDemo {
     }
 
     //优化后代码
-    public void invest(long userId, long financialProductId){
-
-        //判断当前时间是否为本月最后一天
-        if(isLastDayOfMonth(new Date())){
-            return;
-        }
-    }
+    //public void invest(long userId, long financialProductId){
+    //
+    //    //判断当前时间是否为本月最后一天
+    //    if(isLastDayOfMonth(new Date())){
+    //        return;
+    //    }
+    //}
 
     private boolean isLastDayOfMonth(Date date){
         Calendar instance = Calendar.getInstance();
