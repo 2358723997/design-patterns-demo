@@ -10,7 +10,6 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import com.alibaba.fastjson.JSON;
-import io.reactivex.internal.schedulers.ExecutorScheduler;
 
 /**
  * Metrics类
