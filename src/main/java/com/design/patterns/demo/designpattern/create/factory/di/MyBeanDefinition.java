@@ -13,12 +13,20 @@ import lombok.Data;
 @Data
 public class MyBeanDefinition {
     private String id;
-    private boolean isSingleton;
+    private Scope isSingleton = Scope.SINGLETON;
     private String className;
     private List<ConstructorArg> constructorArgs;
-    private boolean lazyInit;
+    private boolean lazyInit = false;
 
-    public class ConstructorArg {
+    public boolean isSingleton() {
+        return Scope.SINGLETON != null;
+    }
+
+    public static enum Scope{
+        SINGLETON,
+        PROTOTYPE;
+    }
+    public static class ConstructorArg {
         private boolean isRef;
         private Class type;
         private Object arg;

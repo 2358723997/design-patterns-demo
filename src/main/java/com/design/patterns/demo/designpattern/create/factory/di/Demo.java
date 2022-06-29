@@ -1,5 +1,7 @@
 package com.design.patterns.demo.designpattern.create.factory.di;
 
+import com.design.patterns.demo.designpattern.create.factory.di.domain.RateLimiter;
+
 /**
  * Demo类
  *
@@ -8,6 +10,9 @@ package com.design.patterns.demo.designpattern.create.factory.di;
  */
 public class Demo {
     public static void main(String[] args) {
-        MyApplicationContext context = new MyClassPathXmlApplicationContext("mybeans.xml");
+        MyApplicationContext applicationContext = new MyClassPathXmlApplicationContext("mybeans.xml");
+
+        RateLimiter rateLimiter = (RateLimiter) applicationContext.getBean("rateLimiter");
+        rateLimiter.test();
     }
 }
