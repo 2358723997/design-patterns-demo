@@ -34,7 +34,7 @@ class BSensitiveWordsFilter {
 //C敏感词过滤系统提供的接口
 class CSensitiveWordsFilter {
     public String filter(String text, String mask) {
-        return null
+        return null;
     }
 }
 
@@ -84,7 +84,7 @@ class RiskManagementA{
     private List<ISensitiveWordsFilter> filterList = new ArrayList<>();
 
     public void addISensitiveWordsFilter(ISensitiveWordsFilter filter){
-        filterList.add(filter)
+        filterList.add(filter);
     }
 
     //TODO 参数设计的比较巧妙

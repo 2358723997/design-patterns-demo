@@ -59,7 +59,7 @@ public class RandomIdGeneratorTest {
      * generate() 函数的功能定义为：“生成唯一 ID，格式为：{主机名 substr}-{时间戳}-{8 位随机数}
      */
     @Test
-    public void testGenerate(){
+    public void testGenerate() throws IdGenerationFailureException {
         RandomIdGenerator generator = new RandomIdGenerator();
         String id1 = generator.generate();
         Assert.assertNotNull(id1);
@@ -83,7 +83,7 @@ public class RandomIdGeneratorTest {
      * generate() 函数在主机名获取失败时，返回：null-{时间戳}-{8 位随机数}”,测试生成的 ID 是否完全符合格式要求。
      */
     @Test
-    public void testGenerate_withoutSubHostName(){
+    public void testGenerate_withoutSubHostName() throws IdGenerationFailureException {
         RandomIdGenerator generator = new RandomIdGenerator();
         generator.getLastSubstrSplittedByDot(null);
 

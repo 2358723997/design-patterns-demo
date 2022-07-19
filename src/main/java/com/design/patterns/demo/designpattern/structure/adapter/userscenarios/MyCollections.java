@@ -23,18 +23,18 @@ import java.util.List;
 // 的项目如果切换到JDK2.0，代码就会编译不通过。为了避免这种情况的发生
 // 我们可以暂时保留 Enumeration 类，并将其实现替换为直接调用 Itertor
 public class MyCollections {
-    public static Emueration emumeration(final Collection c) {
-        return new Emueration(){
-            Iterator i = c.iterator();
-            public boolean hasMoreElments(){
-                return i.hasNext();
-            }
-
-            public Object nextElement(){
-                return i.next()
-            }
-        };
-    }
+    //public static Emueration emumeration(final Collection c) {
+    //    return new Emueration(){
+    //        Iterator i = c.iterator();
+    //        public boolean hasMoreElments(){
+    //            return i.hasNext();
+    //        }
+    //
+    //        public Object nextElement(){
+    //            return i.next()
+    //        }
+    //    };
+    //}
 
 }
 
