@@ -27,10 +27,12 @@ public class ClusterSingleton {
     private AtomicLong id = new AtomicLong(0);
 
     private static ClusterSingleton instance;
+
+    private static String address;
     // 外部共享存储区
-    private static SharedObjectStorage storge = FileSharedObjectStorage(address);
+    private static SharedObjectStorage storge = new FileSharedObjectStorage(address);
     // 分布式锁
-    private static DistributedLock lock = new RedisDistributedLock();
+    private static DistributedLock lock = RedisDistributedLock.getSingletonIntance();
 
     private ClusterSingleton(){}
 
@@ -46,7 +48,7 @@ public class ClusterSingleton {
         //存储回外部共享存储区
         lock.save(ClusterSingleton.class);
         //是否对象
-        instance == null;
+        instance = null;
         //释放锁
         lock.unlock();
     }

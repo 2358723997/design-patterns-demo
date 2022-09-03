@@ -1,6 +1,7 @@
 package com.design.patterns.demo.coderestructure.codedecouples;
 
 
+import com.design.patterns.demo.designpattern.create.singleton.dimensions.DistributedLock;
 import org.redisson.Redisson;
 import org.redisson.RedissonLock;
 import org.redisson.api.RLock;
@@ -12,7 +13,7 @@ import org.redisson.api.RedissonClient;
  * @author wangjixue
  * @date 4/17/22 10:05 PM
  */
-public class RedisDistributedLock{
+public class RedisDistributedLock extends DistributedLock {
 
     private static final RedissonClient redission = Redisson.create();
     private static RedisDistributedLock instance = new RedisDistributedLock();
